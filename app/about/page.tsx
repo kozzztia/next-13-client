@@ -33,7 +33,7 @@ const Page = () => {
             {
                 isLoading
                     ?<LoadingComponent/>
-                    :<Todos todos = {todos}/>
+                    :<Todos todos= {todos}/>
             }
 
         </div>
