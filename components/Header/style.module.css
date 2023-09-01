@@ -1,0 +1,17 @@
+
+
+.header{
+    min-height: var(--min-height);
+    padding: var(--padding);
+    max-width: var(--max-width);
+    margin: var(--centred);
+    background: var(--header-bg);
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    position: relative;
+}

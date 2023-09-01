@@ -1,0 +1,40 @@
+:root {
+  --color : 0,0,0,2,0.5;
+  --background : #575757;
+  --centred : 0 auto;
+  --max-width : 1600px;
+  --size : 20px;
+  --padding  :20px;
+  --min-height :  100px;
+  --header-bg : #b600ff;
+  --footer-bg : rgba(184, 230, 255, 0.42);
+  --layout-bg : rgba(255, 255, 255, 0.77);
+  --title-color : rgba(0, 0, 0, 0.9);
+  --link-color : rgba(89, 255, 0, 0.7);
+  --link-color-active : rgb(157, 24, 24);
+}
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  font-size: var(--size);
+  color: rgb(var(--color));
+  background: var(--background)
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

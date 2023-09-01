@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--padding);
+  max-width: var(--max-width);
+  margin: var(--centred);
+  background: var(--layout-bg);
+  min-height: calc(100vh - var(--min-height)*2);
+}

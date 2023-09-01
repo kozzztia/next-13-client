@@ -1,0 +1,12 @@
+
+.link{
+    color: var(--link-color);
+    font-size : 30px;
+    padding : 5px;
+    font-weight: 800;
+    transition: .5s;
+}
+.active{
+    transition: .5s;
+    color: var(--link-color-active);
+}

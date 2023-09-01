@@ -1,0 +1,9 @@
+
+
+.footer{
+ min-height: var(--min-height);
+ padding: var(--padding);
+ max-width: var(--max-width);
+ margin: var(--centred);
+ background: var(--footer-bg);
+}
