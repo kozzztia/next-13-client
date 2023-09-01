@@ -1,19 +1,24 @@
-import React from 'react';
+'use client'
+
+import React, {useEffect} from 'react';
 import style from "./style.module.css"
+import {useTodos} from "@/store";
+import {shallow} from "zustand/shallow";
+import LoadingComponent from "@/components/ui-kit/Loading/LoadingComponent";
 
-type todoType = {
-    id: number;
-    title: string;
-    completed: boolean;
-}
 
-const Todos = ({todos}: { todos: todoType[] }) => {
+
+const Todos = () => {
+    const [todos , loading , getAllTodos] = useTodos((state) => [
+        state.todos , state.loading , state.getAllTodos
+    ] , shallow)
+    useEffect(()=>{
+        getAllTodos();
+    },[getAllTodos])
     return (
-        todos.length === 0 ?
-            <p>empty</p>
-            :
             <ul className={style.todoList}>
-                {
+                {loading?
+                    <LoadingComponent/>:
                     todos.map(item => <div key={item.id} className={style.todo}>
                         <b>{item.id}</b> : {item.title}
                     </div>)
