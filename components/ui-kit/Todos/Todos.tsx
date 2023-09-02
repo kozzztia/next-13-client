@@ -1,29 +1,32 @@
-'use client'
-
-import React, {useEffect} from 'react';
+"use client"
+import React from 'react';
 import style from "./style.module.css"
-import {useTodos} from "@/store";
-import {shallow} from "zustand/shallow";
+import useSWR from "swr"
 import LoadingComponent from "@/components/ui-kit/Loading/LoadingComponent";
+import {getAllTodos} from "@/services/getAllTodos"
+import HeaderTitle from "@/components/ui-kit/Titles/HeaderTitle";
+import {text} from "@/public/dictionary/text";
 
-
+type todosType = {
+    id : number,
+    userId : number;
+    title : string;
+    completed : boolean
+}
 
 const Todos = () => {
-    const [todos , loading , getAllTodos] = useTodos((state) => [
-        state.todos , state.loading , state.getAllTodos
-    ] , shallow)
-    useEffect(()=>{
-        getAllTodos();
-    },[getAllTodos])
+    const {postsTitle} = text;
+    const {data : todos , isLoading} = useSWR("todos" , getAllTodos)
     return (
-            <ul className={style.todoList}>
-                {loading?
+            <div className={style.todoList}>
+                <HeaderTitle title={postsTitle} />
+                {isLoading?
                     <LoadingComponent/>:
-                    todos.map(item => <div key={item.id} className={style.todo}>
+                    todos?.map(item => <div key={item.id} className={style.todo}>
                         <b>{item.id}</b> : {item.title}
                     </div>)
                 }
-            </ul>
+            </div>
     );
 };
 

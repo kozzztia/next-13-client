@@ -8,7 +8,7 @@ type todoType = {
 }
 
 
-export const getSearchedTodos= async (search : string):Promise<todoType[] | []> => {
+export const getSearchedTodos= async (search : string):Promise<todoType[] | undefined> => {
     const data = await fetch(`https://jsonplaceholder.typicode.com/todos?q=${search}`)
     if(!data.ok) throw new Error("unfind");
     return data.json();

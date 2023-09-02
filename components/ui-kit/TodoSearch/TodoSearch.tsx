@@ -1,20 +1,22 @@
 'use client'
 import React, {ChangeEvent, FormEvent, useState} from 'react';
-import style from "./style.module.css"
+import style from "./style.module.css";
+import useSWR from "swr";
 import {text} from "@/public/dictionary/text";
-import {useTodos} from "@/store";
+import {getSearchedTodos} from "@/services/getSearchedTodos";
 
 
 
 const TodoSearch = () => {
-    const {inputPlaceholder} = text
+    const {inputPlaceholder} = text;
     const [searchValue , setSearchValueValue] = useState<string>("");
-    const [getSearchedTodos] = useTodos((state)=> [state.getSearchedTodos])
+    const {mutate } = useSWR("todos")
 
     const handleSubmit = async (e  : FormEvent<HTMLFormElement>, )=>{
-        await e.preventDefault()
-        await getSearchedTodos(searchValue)
-        await setSearchValueValue("")
+        await e.preventDefault();
+        const todos = await getSearchedTodos(searchValue);
+        await mutate(todos)
+        await setSearchValueValue("");
     }
     return (
         <form  className={style.search} onSubmit={(e)=> handleSubmit(e)}>

@@ -8,7 +8,7 @@ type todoType = {
 }
 
 
-export const getAllTodos = async () : Promise<todoType[] | []> => {
+export const getAllTodos = async () : Promise<todoType[] | undefined> => {
     const data = await fetch("https://jsonplaceholder.typicode.com/todos");
     if(!data.ok) throw new Error("shit can happen")
     return data.json()
