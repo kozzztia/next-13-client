@@ -18,4 +18,6 @@ export const text = {
     postsTitle : "Our post made by json & fetch",
 
     inputPlaceholder : "search",
+
+    contactsTitle : "products"
 }

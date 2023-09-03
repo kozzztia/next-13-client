@@ -31,7 +31,7 @@ const Page = async ({params : {id}} : idParamsType) => {
     return (
         <div className={style.post}>
             <h2>{id}: {title}</h2>
-            <Link href={"/posts/"} className={style.link}>
+            <Link href={"/products/"} className={style.link}>
                 back
             </Link>
         </div>
