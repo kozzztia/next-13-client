@@ -7,6 +7,7 @@ import HeaderTitle from "@/components/ui-kit/Titles/HeaderTitle";
 import {getAllProducts} from "@/services/getAllProducts";
 import {Metadata} from "next";
 import ProductList from "@/components/ui-kit/ProductList/ProductList";
+import ProductSearch from "@/components/ui-kit/ProductSearch/ProductSearch";
 
 
 
@@ -21,6 +22,7 @@ const Page =  () => {
     return (
         <div className={style.contacts}>
             <HeaderTitle title={contactsTitle} />
+            <ProductSearch/>
             <ProductList/>
         </div>
     );

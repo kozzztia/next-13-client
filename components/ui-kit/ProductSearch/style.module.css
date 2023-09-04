@@ -1,0 +1,34 @@
+
+.search{
+    width :100%;
+    position: relative;
+    height: var(--min-height);
+    background: rgba(184, 230, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    font-size: 25px;
+    height: 40px;
+    min-width : 300px;
+    padding : 10px;
+    border : none;
+    outline: none;
+    border-radius:  10px 0 0 10px  ;
+}
+.button{
+    background: var(--link-color-active);
+    height: 40px;
+    width: 40px;
+    border : none;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+    padding : 5px;
+    cursor : pointer;
+    .svg{
+        width : 100%;
+        height: 100%;
+    }
+}

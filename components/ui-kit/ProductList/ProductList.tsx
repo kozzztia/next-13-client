@@ -9,7 +9,7 @@ import {postProduct} from "@/services/postProduct";
 
 const ProductList = () => {
     const {data: products, isLoading, mutate} = useSWR("products", getAllProducts)
-    const body = {id :10 , name : "name"}
+    // const body = {id :10 , name : "name"}
     return (
         <div className={style.list}>
             {

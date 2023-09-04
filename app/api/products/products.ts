@@ -6,13 +6,13 @@ type productsType = {
     name : string,
 }
 export const products : productsType[] = [
-    {id : 0 , name : "null"},
-    {id : 1 , name : "one"},
-    {id : 2 , name : "two"},
-    {id : 3 , name : "three"},
-    {id : 4 , name : "four"},
-    {id : 5 , name : "five"},
-    {id : 6 , name : "six"},
-    {id : 7 , name : "seven"},
-    {id : 8 , name : "eight"},
+    {id : 0 , name : "null null null"},
+    {id : 1 , name : "one two"},
+    {id : 2 , name : "two seven"},
+    {id : 3 , name : "three seven"},
+    {id : 4 , name : "four seven four"},
+    {id : 5 , name : "five two"},
+    {id : 6 , name : "six seven"},
+    {id : 7 , name : "seven seven"},
+    {id : 8 , name : "eight two"},
 ]

@@ -4,12 +4,22 @@ type productType = {
     id :number;
     name  : string;
 }
+
+// localhost:3000/api/products?q=one
 export  const GET = async(req :Request, res : Response)=> {
-    return NextResponse.json(products)
+    const {searchParams} = new URL(req.url);
+    const query = searchParams.get('q');
+    let currentProducts = products;
+
+    if (query) {
+        currentProducts = products.filter(product => product.name.toLowerCase().includes(query))
+    }
+
+    return NextResponse.json(currentProducts)
 }
 
-// export const POST = async (req : Request, res : Response)=>{
-//     const body : productType = await req.json();
-//     products.push(body);
-//     return NextResponse.json(req);
-// }
+export const POST = async (req : Request, res : Response)=>{
+    const body = await req.json();
+    console.log(body)
+    return NextResponse.json({body} );
+}
