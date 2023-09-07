@@ -21,8 +21,9 @@ const Page =  () => {
     const {contactsTitle} = text;
     return (
         <div className={style.contacts}>
-            <HeaderTitle title={contactsTitle} />
+
             <ProductSearch/>
+            <HeaderTitle title={contactsTitle} />
             <ProductList/>
         </div>
     );

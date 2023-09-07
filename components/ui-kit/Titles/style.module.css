@@ -2,4 +2,6 @@
 .headerTitle{
     position: relative;
     color : var(--title-color);
+    text-transform: uppercase;
+    margin-bottom:var(--margin-button);
 }
